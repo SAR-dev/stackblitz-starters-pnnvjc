@@ -25,3 +25,17 @@
     transform: translateY(-5.2rem);
   }
 }
+
+.move-3 {
+  animation: move-3 0.5s ease-in-out forwards;
+}
+
+@keyframes move-3 {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-2rem);
+  }
+}
