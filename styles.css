@@ -1,0 +1,27 @@
+.move-1 {
+  animation: move-1 0.5s ease-in-out forwards;
+}
+
+@keyframes move-1 {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-4.8rem);
+  }
+}
+
+.move-2 {
+  animation: move-2 0.5s ease-in-out forwards;
+}
+
+@keyframes move-2 {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-5.2rem);
+  }
+}

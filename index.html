@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main
+      class="flex h-screen w-full items-center justify-center p-5"
+      x-data="{ count: 3}"
+      x-init="setInterval(() => count > -20 ? count-- : clearInterval(), 1000)"
+    >
+      <div
+        class="w-[30rem] h-[20rem] py-5 border border-gray-300 flex flex-col gap-5 relative"
+      >
+        <div class="w-full flex justify-center">
+          <div class="w-14 h-14 bg-black" x-show="count > -2"></div>
+        </div>
+        <div
+          class="w-full flex flex-col items-center text-center"
+          x-show="count > 0"
+        >
+          <div class="font-semibold">MIXED PRIZES RAFFLE</div>
+          <div>is about to start</div>
+        </div>
+
+        <div class="h-20"></div>
+        <!-- blue box 1 -->
+        <div
+          class="w-full flex justify-center items-center bg-blue-500 h-20 absolute left-0 top-[10rem]"
+          x-show="count > 0"
+        >
+          <div
+            class="h-14 w-14 rounded-full bg-black text-white flex justify-center items-center text-2xl font-bold"
+            x-text="count"
+          ></div>
+        </div>
+
+        <!-- blue box 2 -->
+        <div
+          class="w-full flex justify-center items-center bg-blue-500 h-20 text-white absolute left-0 top-[10rem] move-1"
+          x-show="count <= 0 && count > -2"
+        >
+          <div class="text-2xl font-bold">Drawing For Grand Prize</div>
+        </div>
+
+        <!-- blue box 3 -->
+        <div
+          class="w-full flex flex-col justify-center items-center bg-blue-500 h-20 text-white absolute left-0 top-[5.2rem] move-2"
+          x-show="count <= -2"
+        >
+          <div>And the winner of the</div>
+          <div class="text-xl font-bold">Porshe 911 is</div>
+        </div>
+
+        <div
+          class="flex w-full justify-center gap-3 absolute left-0 top-[5.8rem]"
+          x-show="count <= -3"
+        >
+          <div
+            class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center"
+          >
+            7
+          </div>
+          <div
+            class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center"
+          >
+            6
+          </div>
+          <div
+            class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center"
+          >
+            6
+          </div>
+          <div
+            class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center"
+          >
+            8
+          </div>
+          <div
+            class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center"
+          >
+            2
+          </div>
+        </div>
+
+        <div class="w-64 mx-auto h-20 bg-black" x-show="count <= 0"></div>
+        <div class="w-full flex justify-center" x-show="count > 0">
+          The Raffle Has 3 Prizes Valued At $96,500
+        </div>
+        <div
+          class="w-full flex flex-col items-center font-semibold"
+          x-show="count <= 0"
+        >
+          <div>Porshe 911</div>
+          <div class="font-semibold">Valued at $85,000</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
