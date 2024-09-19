@@ -14,7 +14,7 @@
 <body>
   <main class="flex h-screen w-full items-center justify-center p-5" x-data="{ count: 3}"
     x-init="setInterval(() => count > -20 ? count-- : clearInterval(), 1000)">
-    <div class="w-[30rem] h-[20rem] py-5 border border-gray-300 flex flex-col gap-5 relative">
+    <div class="w-[30rem] h-[20rem] py-5 border border-gray-300 flex flex-col gap-5 relative bg-white overflow-hidden">
       <div class="w-full flex justify-center">
         <div class="w-14 h-14 bg-black" x-show="count > -2"></div>
       </div>
@@ -39,13 +39,13 @@
 
       <!-- blue box 3 -->
       <div
-        class="w-full flex flex-col justify-center items-center bg-blue-500 h-20 text-white absolute left-0 top-[5.2rem] move-2"
+        class="w-full flex flex-col justify-center items-center bg-blue-500 h-20 text-white absolute left-0 top-[5.2rem] move-2 z-[2]"
         x-show="count <= -2">
         <div>And the winner of the</div>
         <div class="text-xl font-bold">Porshe 911 is</div>
       </div>
 
-      <div class="flex w-full justify-center gap-3 absolute left-0 top-[5.8rem]" x-show="count <= -3">
+      <div class="flex w-full justify-center gap-3 absolute left-0 top-[5.8rem] move-4" x-show="count <= -3">
         <div class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
           7
         </div>
@@ -67,7 +67,7 @@
         The Raffle Has 3 Prizes Valued At $96,500
       </div>
 
-      <div class="w-full absolute left-0 top-[11rem]" :class="count <= -2 && 'move-3'" x-show="count <= 0">
+      <div class="w-full absolute left-0 top-[11rem]" :class="count > -2 ? 'move-5' : (count <= -2 ? 'move-3' : '')"  x-show="count <= 0">
         <div class="w-64 mx-auto h-20 bg-black" x-show="count <= 0"></div>
         <div class="w-full flex flex-col items-center font-semibold" x-show="count <= 0">
           <div>Porshe 911</div>

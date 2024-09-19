@@ -39,3 +39,31 @@
     transform: translateY(-2rem);
   }
 }
+
+.move-4 {
+  animation: move-4 0.5s ease-in-out forwards;
+}
+
+@keyframes move-4 {
+  0% {
+    transform: translateY(-4rem);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.move-5 {
+  animation: move-5 0.5s ease-in-out forwards;
+}
+
+@keyframes move-5 {
+  0% {
+    transform: translateY(4rem);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
