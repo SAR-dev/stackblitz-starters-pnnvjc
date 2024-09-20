@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="//unpkg.com/alpinejs" defer></script>
-  <script type="module" src="script.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -45,20 +44,20 @@
         <div class="text-xl font-bold">Porshe 911 is</div>
       </div>
 
-      <div class="flex w-full justify-center gap-3 absolute left-0 top-[5.8rem] move-4" x-show="count <= -3">
-        <div class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
+      <div class="flex w-full justify-center gap-3 absolute left-0 top-[5.8rem] move-4" x-show="count <= -3" x-init="setTimeout(() => randomizeAll(), 6000)">
+        <div class="number-box h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
           7
         </div>
-        <div class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
+        <div class="number-box h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
           6
         </div>
-        <div class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
+        <div class="number-box h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
           6
         </div>
-        <div class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
+        <div class="number-box h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
           8
         </div>
-        <div class="h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
+        <div class="number-box h-8 w-8 shadow text-lg font-semibold flex rounded items-center justify-center">
           2
         </div>
       </div>
@@ -76,6 +75,7 @@
       </div>
     </div>
   </main>
+  <script src="script.js"></script>
 </body>
 
 </html>
